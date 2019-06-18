@@ -58,3 +58,7 @@ bike_2.set_color = "yellow"
 p bike_2.color
 
 p "The second bike is a #{bike_2.color} bike, worth #{bike_2.price}, from the year #{bike_2.year}."
+
+bike_3 = Bike.new("yellow", 250, 2019)
+
+p bike_3
