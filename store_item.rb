@@ -62,3 +62,7 @@ p "The second bike is a #{bike_2.color} bike, worth #{bike_2.price}, from the ye
 bike_3 = Bike.new("yellow", 250, 2019)
 
 p bike_3
+
+p bike_1.color
+p bike_1.price
+p bike_1.year
