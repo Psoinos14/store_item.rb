@@ -82,3 +82,21 @@ bike_3.print_bike
 # p bike_1.color
 # p bike_1.price
 # p bike_1.year
+
+class Mountainbike < Bike
+  def initialize(bike_characteristics)
+    super
+    @shocks = bike_characteristics[:shocks]
+  end
+
+  def shocks
+    @shocks
+  end
+
+end
+
+bikenew = Mountainbike.new(color: "blue", price: 150, year: 2015, shocks: "absorbing")
+
+p bikenew
+
+p bikenew.shocks
