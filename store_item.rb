@@ -29,21 +29,27 @@ class Bike
     @year = year
   end
 
-  def color
-    @color
-  end
+  attr_reader :color
+  attr_writer :color
+  attr_reader :price
+  attr_writer :price
+  attr_reader :year
+
+#   def color
+#     @color
+#   end
   
-  def set_color=(input_color)
-    @color = input_color
-  end
+#   def set_color=(input_color)
+#     @color = input_color
+#   end
 
-  def price
-    @price
-  end
+#   def price
+#     @price
+#   end
 
-  def year
-    @year
-  end
+#   def year
+#     @year
+#   end
 
 end
 
@@ -53,7 +59,7 @@ p bike_1
 bike_2 = Bike.new("pink", 200, 2018)
 p bike_2
 
-bike_2.set_color = "yellow"
+bike_2.color = "yellow"
 
 p bike_2.color
 
