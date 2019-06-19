@@ -25,6 +25,9 @@ employee2.print_info
 
 
 class Manager < Employee
+  attr_reader :employees
+  attr_writer :active
+
   def initialize(input_options)
     super
     @employees = input_options[:employees]
@@ -37,10 +40,15 @@ class Manager < Employee
   end
 
   def give_all_raises
-    index = 0
-    while index < @employees.length
-      @employees[index].give_annual_raise
-      index += 1
+    @employees.each do |employee|
+      employee.give_annual_raise
+    end
+  end
+
+  def fire_all_employees
+    employees.each do |employee|
+      p employee.class
+      employee.active = false
     end
   end
 end
@@ -50,6 +58,7 @@ manager.print_info
 manager.send_report
 
 manager.give_all_raises
+manager.fire_all_employees
 
 p employee1
 p employee2
