@@ -21,19 +21,16 @@
 # }
 
 # p "The third bike is a #{bike_3["color"]} bike, worth $#{bike_3["price"]}, made in the year #{bike_3["year"]}."
-
+require_relative 'module_rideable.rb'
+require_relative 'module_bikeable.rb'
 class Bike
+  include Rideable
+  include Bikeable
   def initialize(bike_characteristics)
     @color = bike_characteristics[:color]
     @price = bike_characteristics[:price]
     @year = bike_characteristics[:year]
   end
-
-  attr_reader :color
-  attr_writer :color
-  attr_reader :price
-  attr_writer :price
-  attr_reader :year
 
   def print_bike
     p "The bike is a #{@color} bike, worth #{@price}, made in the year #{@year}"
@@ -83,9 +80,13 @@ bike_3.print_bike
 # p bike_1.price
 # p bike_1.year
 
-class Mountainbike < Bike
+class Mountainbike 
+  include Rideable
+  include Bikeable
   def initialize(bike_characteristics)
-    super
+    @color = bike_characteristics[:color]
+    @price = bike_characteristics[:price]
+    @year = bike_characteristics[:year]
     @shocks = bike_characteristics[:shocks]
   end
 
